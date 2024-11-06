@@ -5,11 +5,9 @@ plugins {
     id "dev.flutter.flutter-gradle-plugin"
 }
 
+def keystorePropertiesFile = rootProject.file("key.properties")
 def keystoreProperties = new Properties()
-def keystorePropertiesFile = rootProject.file('key.properties')
-if (keystorePropertiesFile.exists()) {
-    keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
-}
+keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 
 android {
     namespace = "com.ypgroup.favorite_meat"
